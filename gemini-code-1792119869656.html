@@ -1,0 +1,502 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Hari Ranthambore Guest House | Budget Stay in Sawai Madhopur</title>
+  <meta name="description" content="Affordable and comfortable stay near Ranthambore National Park. Clean rooms, parking, RO water, power backup, and safari booking assistance." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --primary: #1e3a2f;
+      --primary-light: #2d5a49;
+      --accent: #d97706;
+      --accent-hover: #b45309;
+      --bg: #f8fafc;
+      --surface: #ffffff;
+      --text: #0f172a;
+      --text-muted: #475569;
+      --border: #e2e8f0;
+      --radius: 12px;
+      --shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: 'Plus Jakarta Sans', sans-serif;
+    }
+
+    body {
+      background-color: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+    }
+
+    header {
+      background-color: var(--primary);
+      color: white;
+      padding: 1rem 1.5rem;
+      position: sticky;
+      top: 0;
+      z-index: 50;
+      box-shadow: var(--shadow);
+    }
+
+    .nav-container {
+      max-width: 1100px;
+      margin: 0 auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .brand {
+      font-size: 1.25rem;
+      font-weight: 700;
+      letter-spacing: -0.5px;
+    }
+
+    .nav-links a {
+      color: #e2e8f0;
+      text-decoration: none;
+      font-weight: 500;
+      margin-left: 1.25rem;
+      font-size: 0.95rem;
+      transition: color 0.2s;
+    }
+
+    .nav-links a:hover {
+      color: #ffffff;
+    }
+
+    .hero {
+      background: linear-gradient(rgba(30, 58, 47, 0.85), rgba(30, 58, 47, 0.9)),
+                  url('https://images.unsplash.com/photo-1571896349842-33c89424de2d?auto=format&fit=crop&w=1200&q=80') center/cover;
+      color: white;
+      text-align: center;
+      padding: 5rem 1.5rem;
+    }
+
+    .hero h1 {
+      font-size: 2.5rem;
+      font-weight: 700;
+      margin-bottom: 0.75rem;
+      line-height: 1.2;
+    }
+
+    .hero p {
+      font-size: 1.15rem;
+      color: #cbd5e1;
+      max-width: 650px;
+      margin: 0 auto 1.75rem;
+    }
+
+    .hero-btn {
+      display: inline-block;
+      background: var(--accent);
+      color: white;
+      padding: 0.85rem 1.75rem;
+      border-radius: var(--radius);
+      font-weight: 600;
+      text-decoration: none;
+      transition: background 0.2s;
+    }
+
+    .hero-btn:hover {
+      background: var(--accent-hover);
+    }
+
+    .container {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 3.5rem 1.5rem;
+    }
+
+    .section-title {
+      text-align: center;
+      margin-bottom: 2.5rem;
+    }
+
+    .section-title h2 {
+      font-size: 2rem;
+      color: var(--primary);
+    }
+
+    .section-title p {
+      color: var(--text-muted);
+      margin-top: 0.25rem;
+    }
+
+    .grid-rooms {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 1.5rem;
+    }
+
+    .card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 1.5rem;
+      box-shadow: var(--shadow);
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    .card h3 {
+      font-size: 1.2rem;
+      color: var(--primary);
+      margin-bottom: 0.5rem;
+    }
+
+    .card .price {
+      font-size: 1.5rem;
+      font-weight: 700;
+      color: var(--accent);
+      margin-bottom: 0.75rem;
+    }
+
+    .card .price span {
+      font-size: 0.85rem;
+      font-weight: normal;
+      color: var(--text-muted);
+    }
+
+    .card ul {
+      list-style: none;
+      margin-bottom: 1.25rem;
+      color: var(--text-muted);
+      font-size: 0.9rem;
+    }
+
+    .card ul li {
+      margin-bottom: 0.35rem;
+    }
+
+    .amenities-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 1.5rem;
+    }
+
+    .amenity-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      padding: 1.5rem;
+      border-radius: var(--radius);
+      text-align: center;
+    }
+
+    .amenity-card h4 {
+      color: var(--primary);
+      margin-top: 0.5rem;
+    }
+
+    .booking-section {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 2.5rem;
+      box-shadow: var(--shadow);
+      max-width: 650px;
+      margin: 0 auto;
+    }
+
+    .form-group {
+      margin-bottom: 1.25rem;
+    }
+
+    .form-group label {
+      display: block;
+      margin-bottom: 0.4rem;
+      font-weight: 600;
+      font-size: 0.9rem;
+    }
+
+    .form-group input, .form-group select {
+      width: 100%;
+      padding: 0.75rem;
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      font-size: 1rem;
+    }
+
+    .form-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1rem;
+    }
+
+    .book-btn {
+      width: 100%;
+      background: #25D366;
+      color: white;
+      border: none;
+      padding: 1rem;
+      border-radius: 8px;
+      font-weight: 700;
+      font-size: 1.05rem;
+      cursor: pointer;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 0.5rem;
+      transition: background 0.2s;
+    }
+
+    .book-btn:hover {
+      background: #20bd5a;
+    }
+
+    .contact-info {
+      text-align: center;
+      margin-top: 3rem;
+    }
+
+    .contact-numbers {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 1rem;
+      margin-top: 1rem;
+    }
+
+    .phone-tag {
+      background: #e2e8f0;
+      padding: 0.5rem 1rem;
+      border-radius: 50px;
+      font-weight: 600;
+      color: var(--primary);
+      text-decoration: none;
+    }
+
+    footer {
+      background: var(--primary);
+      color: #94a3b8;
+      text-align: center;
+      padding: 2rem 1.5rem;
+      margin-top: 3rem;
+      font-size: 0.9rem;
+    }
+
+    footer a {
+      color: #cbd5e1;
+    }
+
+    @media (max-width: 600px) {
+      .hero h1 { font-size: 1.85rem; }
+      .form-row { grid-template-columns: 1fr; }
+      .nav-links { display: none; }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <div class="nav-container">
+      <div class="brand">Hari Ranthambore</div>
+      <div class="nav-links">
+        <a href="#rooms">Rooms</a>
+        <a href="#amenities">Amenities</a>
+        <a href="#book">Reserve</a>
+        <a href="#contact">Contact</a>
+      </div>
+    </div>
+  </header>
+
+  <section class="hero">
+    <h1>Hari Ranthambore Guest House</h1>
+    <p>Comfortable, budget-friendly accommodation located conveniently near Ranthambore National Park in Sawai Madhopur.</p>
+    <a href="#book" class="hero-btn">Book Your Stay Now</a>
+  </section>
+
+  <section id="rooms" class="container">
+    <div class="section-title">
+      <h2>Rooms & Rates</h2>
+      <p>Clean, spacious rooms designed for families, couples, and solo travelers</p>
+    </div>
+
+    <div class="grid-rooms">
+      <div class="card">
+        <div>
+          <h3>Master Bedroom AC</h3>
+          <div class="price">₹1,200 <span>/ night</span></div>
+          <ul>
+            <li>Capacity: 2 Adults</li>
+            <li>Air Conditioned</li>
+            <li>Spacious Master Bed</li>
+            <li>Attached Bathroom</li>
+          </ul>
+        </div>
+        <a href="#book" class="hero-btn" style="text-align:center; padding: 0.6rem;">Select Room</a>
+      </div>
+
+      <div class="card">
+        <div>
+          <h3>Double Bedroom AC</h3>
+          <div class="price">₹1,000 <span>/ night</span></div>
+          <ul>
+            <li>Capacity: 2 Adults</li>
+            <li>Air Conditioned</li>
+            <li>Comfortable Double Bed</li>
+            <li>Attached Bathroom</li>
+          </ul>
+        </div>
+        <a href="#book" class="hero-btn" style="text-align:center; padding: 0.6rem;">Select Room</a>
+      </div>
+
+      <div class="card">
+        <div>
+          <h3>Double Bedroom Non-AC</h3>
+          <div class="price">₹800 <span>/ night</span></div>
+          <ul>
+            <li>Capacity: 2 Adults</li>
+            <li>Ceiling Fan Cooled</li>
+            <li>Comfortable Double Bed</li>
+            <li>Attached Bathroom</li>
+          </ul>
+        </div>
+        <a href="#book" class="hero-btn" style="text-align:center; padding: 0.6rem;">Select Room</a>
+      </div>
+
+      <div class="card">
+        <div>
+          <h3>Single Bed Room</h3>
+          <div class="price">₹600 <span>/ night</span></div>
+          <ul>
+            <li>Capacity: 1 Person</li>
+            <li>Comfortable Single Bed</li>
+            <li>Ideal for Solo Travelers</li>
+            <li>Clean & Private</li>
+          </ul>
+        </div>
+        <a href="#book" class="hero-btn" style="text-align:center; padding: 0.6rem;">Select Room</a>
+      </div>
+    </div>
+    <p style="text-align: center; margin-top: 1.5rem; color: var(--text-muted); font-size: 0.9rem;">
+      * Extra person charges: ₹200 per adult/child. Check-in: 12:00 PM | Check-out: 11:00 AM.
+    </p>
+  </section>
+
+  <section id="amenities" style="background-color: #f1f5f9; padding: 3.5rem 1.5rem;">
+    <div class="container" style="padding-top:0; padding-bottom:0;">
+      <div class="section-title">
+        <h2>Guest Amenities</h2>
+        <p>Everything you need for a restful stay during your jungle safari trip</p>
+      </div>
+
+      <div class="amenities-grid">
+        <div class="amenity-card">
+          <h4>Tiger Safari Assistance</h4>
+          <p style="font-size: 0.9rem; color: var(--text-muted); margin-top: 0.25rem;">Direct guidance and arrangements for Ranthambore jungle safari permits and vehicles.</p>
+        </div>
+        <div class="amenity-card">
+          <h4>Free Vehicle Parking</h4>
+          <p style="font-size: 0.9rem; color: var(--text-muted); margin-top: 0.25rem;">Safe parking space available for your car or two-wheeler on premises.</p>
+        </div>
+        <div class="amenity-card">
+          <h4>Power Backup</h4>
+          <p style="font-size: 0.9rem; color: var(--text-muted); margin-top: 0.25rem;">Reliable generator/inverter power backup to keep fans, lights, and devices running.</p>
+        </div>
+        <div class="amenity-card">
+          <h4>RO Drinking Water</h4>
+          <p style="font-size: 0.9rem; color: var(--text-muted); margin-top: 0.25rem;">Safe, filtered reverse osmosis drinking water available 24/7 for guests.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="book" class="container">
+    <div class="booking-section">
+      <div class="section-title" style="margin-bottom: 1.5rem;">
+        <h2>Reserve via WhatsApp</h2>
+        <p>Instant confirmation with zero booking fees</p>
+      </div>
+
+      <form id="bookingForm" onsubmit="handleBooking(event)">
+        <div class="form-group">
+          <label for="guestName">Full Name</label>
+          <input type="text" id="guestName" placeholder="Enter your name" required />
+        </div>
+
+        <div class="form-row">
+          <div class="form-group">
+            <label for="checkIn">Check-In Date</label>
+            <input type="date" id="checkIn" required />
+          </div>
+          <div class="form-group">
+            <label for="checkOut">Check-Out Date</label>
+            <input type="date" id="checkOut" required />
+          </div>
+        </div>
+
+        <div class="form-row">
+          <div class="form-group">
+            <label for="roomType">Room Type</label>
+            <select id="roomType">
+              <option value="Master Bedroom AC (Rs. 1200)">Master Bedroom AC - ₹1,200</option>
+              <option value="Double Bedroom AC (Rs. 1000)">Double Bedroom AC - ₹1,000</option>
+              <option value="Double Bedroom Non-AC (Rs. 800)">Double Bedroom Non-AC - ₹800</option>
+              <option value="Single Bed Room (Rs. 600)">Single Bed Room - ₹600</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="guests">Total Guests</label>
+            <input type="number" id="guests" min="1" max="10" value="2" required />
+          </div>
+        </div>
+
+        <button type="submit" class="book-btn">
+          <span>Book via WhatsApp</span>
+        </button>
+      </form>
+    </div>
+
+    <div id="contact" class="contact-info">
+      <h3 style="color: var(--primary); margin-bottom: 0.5rem;">Contact & Address</h3>
+      <p style="color: var(--text-muted); max-width: 600px; margin: 0 auto;">
+        Govind Nagar, Near Indian Oil Petrol Pump, Kherda, Ranthambore, Sawai Madhopur, Rajasthan 322001
+      </p>
+
+      <div class="contact-numbers">
+        <a href="tel:8802957502" class="phone-tag">📞 +91 8802957502 (WhatsApp)</a>
+        <a href="tel:7011540750" class="phone-tag">📞 +91 7011540750</a>
+        <a href="tel:8851001046" class="phone-tag">📞 +91 8851001046</a>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <p>© 2026 Hari Ranthambore Guest House. All rights reserved.</p>
+    <p style="margin-top: 0.5rem;">Check-in: 12:00 PM | Check-out: 11:00 AM</p>
+  </footer>
+
+  <script>
+    function handleBooking(event) {
+      event.preventDefault();
+      
+      const name = document.getElementById('guestName').value;
+      const checkIn = document.getElementById('checkIn').value;
+      const checkOut = document.getElementById('checkOut').value;
+      const room = document.getElementById('roomType').value;
+      const guests = document.getElementById('guests').value;
+
+      const message = `Hello Hari Ranthambore Guest House, I would like to book a room:%0A` +
+                      `• Name: ${encodeURIComponent(name)}%0A` +
+                      `• Room Type: ${encodeURIComponent(room)}%0A` +
+                      `• Check-In: ${encodeURIComponent(checkIn)} (12:00 PM)%0A` +
+                      `• Check-Out: ${encodeURIComponent(checkOut)} (11:00 AM)%0A` +
+                      `• Total Guests: ${encodeURIComponent(guests)}%0A%0A` +
+                      `Please let me know room availability and payment details.`;
+
+      const whatsappURL = `https://wa.me/918802957502?text=${message}`;
+      window.open(whatsappURL, '_blank');
+    }
+  </script>
+</body>
+</html>
